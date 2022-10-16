@@ -8,46 +8,29 @@ typedef enum {
     DFCameraProjectionOrtho,
 } df_camera_projection_type;
 
+// A look at camera 
 typedef struct {
-    // The camera's position
-    df_vec3_t position;          
-    // The camera's view target
-    df_vec3_t target;
-    // Which way is up :)
-    df_vec3_t up;
-    // The horizontal FOV angle
-    float fov;
-    // The screen's aspect ration
-    float aspect;
-    // The near clipping plane distance
-    float near;
-    // The far clipping plane distance
-    float far;
-    // The camera's projection type
-    df_camera_projection_type projection_type;
+    df_vec3_t position;                        // The camera's position
+    df_vec3_t target;                          // The camera's view target
+    df_vec3_t up;                              // Which way is up :)
+    float fov;                                 // The horizontal FOV angle
+    float aspect;                              // The screen's aspect ration
+    float near;                                // The near clipping plane distance
+    float far;                                 // The far clipping plane distance
+    df_camera_projection_type projection_type; // The camera's projection type
 } df_camera_t;
 
 // An orbital camera controller
 typedef struct {
-    // The internal-usage camera
-    df_camera_t camera;
-    // The camera's target
-    df_vec3_t target;
-    // The orbital distance from the camera to the target
-    float radius;
-    // The polar angle; that is, the angle between vector from 
-    // the object to the camera and the y axis 
-    float polar_angle;      
-    // The azimuthal angle
-    float azimuth_angle;
-    // Tha minimum value for the polar angle
-    float polar_min;
-    // The maximum value for the polar angle
-    float polar_max;
-    // The minimum orbital distance
-    float radius_min;
-    // The maximum orbital distance
-    float radius_max;
+    df_camera_t camera;    // The internal-usage camera
+    df_vec3_t target;      // The camera's target
+    float radius;          // The orbital distance from the camera to the target
+    float polar_angle;     // The angle between the target-camera vector and the y axis    
+    float azimuth_angle;   // The azimuthal angle
+    float polar_min;       // Tha minimum value for the polar angle
+    float polar_max;       // The maximum value for the polar angle
+    float radius_min;      // The minimum orbital distance
+    float radius_max;      // The maximum orbital distance
 } df_orbit_camera_t; 
 
 void df_camera_projection_mat(df_camera_t *camera, df_matrix_4x4_t *out);
