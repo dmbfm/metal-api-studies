@@ -1,0 +1,6 @@
+.DS_Store
+*.dSYM
+*.dSYM/
+*.metallib
+main
+*.air

@@ -1,0 +1,5 @@
+{
+    "directory": ".",
+    "file": "main.m",
+    "arguments": ["/opt/homebrew/opt/llvm/bin/clang", "-o main", "-Wall", "-framework Cocoa", "-framework Metal", "-framework MetalKit", "-g"]
+}
